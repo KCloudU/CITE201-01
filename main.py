@@ -26,10 +26,10 @@ btn_del.pack()
 btn_clr = tk.Button(root, text="Clear All")
 btn_clr.pack()
 
-lst = tk.Listbox(root)
+lst = tk.Listbox(root, height=6)
 lst.pack()
 
-txt = tk.Text(root)
+txt = tk.Text(root, height=6)
 txt.pack()
 
 root.mainloop()
