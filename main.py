@@ -10,11 +10,11 @@ label.pack()
 entry = tk.Entry(root)
 entry.pack()
 
-cmb = ttk.Combobox(root, values=("tst1","tst2","tst3"), state ="readonly")
+cmb = ttk.Combobox(root, values=("A","B","C"), state ="readonly")
 cmb.pack()
 
 chk_var = tk.BooleanVar()
-chk = tk.Checkbutton(root, text="Checkbutton", variable=chk_var)
+chk = tk.Checkbutton(root, text="Important", variable=chk_var)
 chk.pack()
 
 btn_add = tk.Button(root, text="Add")
@@ -26,10 +26,10 @@ btn_del.pack()
 btn_clr = tk.Button(root, text="Clear All")
 btn_clr.pack()
 
-lst = tk.Listbox(root)
+lst = tk.Listbox(root, height=6)
 lst.pack()
 
-txt = tk.Text(root)
+txt = tk.Text(root, height=6)
 txt.pack()
 
 root.mainloop()
