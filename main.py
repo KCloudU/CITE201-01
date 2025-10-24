@@ -7,14 +7,16 @@ root.title("Tkinter design")
 label= tk.Label(root, text="To-Do")
 label.pack()
 
-entry = tk.Entry(root)
+name_var = tk.StringVar()
+
+entry = tk.Entry(root, textvariable=name_var)
 entry.pack()
 
 cmb = ttk.Combobox(root, values=("A","B","C"), state ="readonly")
 cmb.pack()
 
-chk_var = tk.BooleanVar()
-chk = tk.Checkbutton(root, text="Important", variable=chk_var)
+flag = tk.BooleanVar(value=False)
+chk = tk.Checkbutton(root, text="Important", variable=flag)
 chk.pack()
 
 btn_add = tk.Button(root, text="Add")
@@ -36,30 +38,30 @@ def txt_write(s):
     txt.insert("end", s+ "\n")
     txt.see("end")
 def do_add():
-    name = ent.get().strip()
+    name = name_var.get().strip()
     cat = cmb.get() or "-"
     mark = "*" if flag.get() else "·"
     if not name:
-        log_write("! Enter a name first")
+        txt_write("! Enter a name first")
         return
     item = f"{mark} {name} [{cat}]"
     lst.insert("end", item)
-    log_write(f"+ {item}")
-    ent.delete(0, "end")
+    txt_write(f"+ {item}")
+    name_var.set("")
 
 def do_del():
     sel = lst.curselection()
     if not sel:
-        log_write("! Nothing selected")
+        txt_write("! Nothing selected")
         return
     item = lst.get(sel[0])
     lst.delete(sel[0])
-    log_write(f"- {item}")
+    txt_write(f"- {item}")
 
 def do_clr():
     lst.delete(0, "end")
-    log.delete("1.0", "end")
-    log_write("~ cleared")
+    txt.delete("1.0", "end")
+    txt_write("~ cleared")
 
 btn_add.config(command=do_add)
 btn_del.config(command=do_del)
