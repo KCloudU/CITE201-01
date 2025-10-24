@@ -56,6 +56,11 @@ def do_del():
     lst.delete(sel[0])
     log_write(f"- {item}")
 
+def do_clr():
+    lst.delete(0, "end")
+    log.delete("1.0", "end")
+    log_write("~ cleared")
+
 
 root.mainloop()
 
