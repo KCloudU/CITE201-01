@@ -47,7 +47,14 @@ def do_add():
     log_write(f"+ {item}")
     ent.delete(0, "end")
 
-
+def do_del():
+    sel = lst.curselection()
+    if not sel:
+        log_write("! Nothing selected")
+        return
+    item = lst.get(sel[0])
+    lst.delete(sel[0])
+    log_write(f"- {item}")
 
 
 root.mainloop()
