@@ -32,5 +32,9 @@ lst.pack()
 txt = tk.Text(root, height=6)
 txt.pack()
 
+def txt_write(s):
+    txt.insert("end", s+ "\n")
+    txt.see("end")
+
 root.mainloop()
 
