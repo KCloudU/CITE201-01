@@ -4,24 +4,30 @@ from tkinter import ttk
 root = tk.Tk()
 root.title("Tkinter design")
 
-label= tk.Label(root, text="Label")
+label= tk.Label(root, text="To-Do")
 label.pack()
 
 entry = tk.Entry(root)
 entry.pack()
 
-btn =tk.Button(root,text="Button")
-btn.pack()
+cmb = ttk.Combobox(root, values=("tst1","tst2","tst3"), state ="readonly")
+cmb.pack()
 
 chk_var = tk.BooleanVar()
 chk = tk.Checkbutton(root, text="Checkbutton", variable=chk_var)
 chk.pack()
 
+btn_add = tk.Button(root, text="Add")
+btn_add.pack()
+
+btn_del = tk.Button(root, text="Delete Selected")
+btn_del.pack()
+
+btn_clr = tk.Button(root, text="Clear All")
+btn_clr.pack()
+
 lst = tk.Listbox(root)
 lst.pack()
-
-cmb= ttk.Combobox(root, values=("tst1","tst2","tst3"), state="readonly")
-cmb.pack()
 
 txt = tk.Text(root)
 txt.pack()
