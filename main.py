@@ -13,12 +13,18 @@ entry.pack()
 cmb = ttk.Combobox(root, values=("tst1","tst2","tst3"), state ="readonly")
 cmb.pack()
 
-btn =tk.Button(root,text="Button")
-btn.pack()
-
 chk_var = tk.BooleanVar()
 chk = tk.Checkbutton(root, text="Checkbutton", variable=chk_var)
 chk.pack()
+
+btn_add = tk.Button(root, text="Add")
+btn_add.pack()
+
+btn_del = tk.Button(root, text="Delete Selected")
+btn_del.pack()
+
+btn_clr = tk.Button(root, text="Clear All")
+btn_clr.pack()
 
 lst = tk.Listbox(root)
 lst.pack()
