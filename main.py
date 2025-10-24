@@ -10,6 +10,9 @@ label.pack()
 entry = tk.Entry(root)
 entry.pack()
 
+cmb = ttk.Combobox(root, values=("tst1","tst2","tst3"), state ="readonly")
+cmb.pack()
+
 btn =tk.Button(root,text="Button")
 btn.pack()
 
@@ -19,9 +22,6 @@ chk.pack()
 
 lst = tk.Listbox(root)
 lst.pack()
-
-cmb= ttk.Combobox(root, values=("tst1","tst2","tst3"), state="readonly")
-cmb.pack()
 
 txt = tk.Text(root)
 txt.pack()
