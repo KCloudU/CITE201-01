@@ -4,7 +4,7 @@ from tkinter import ttk
 root = tk.Tk()
 root.title("Tkinter design")
 
-label= tk.Label(root, text="Label")
+label= tk.Label(root, text="To-Do")
 label.pack()
 
 entry = tk.Entry(root)
