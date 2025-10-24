@@ -35,6 +35,20 @@ txt.pack()
 def txt_write(s):
     txt.insert("end", s+ "\n")
     txt.see("end")
+def do_add():
+    name = ent.get().strip()
+    cat = cmb.get() or "-"
+    mark = "*" if flag.get() else "·"
+    if not name:
+        log_write("! Enter a name first")
+        return
+    item = f"{mark} {name} [{cat}]"
+    lst.insert("end", item)
+    log_write(f"+ {item}")
+    ent.delete(0, "end")
+
+
+
 
 root.mainloop()
 
