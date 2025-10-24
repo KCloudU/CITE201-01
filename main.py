@@ -20,7 +20,7 @@ chk.pack()
 lst = tk.Listbox(root)
 lst.pack()
 
-cmb= ttk.Combobox(root, values=("test1","test2","test3"), state="readonly")
+cmb= ttk.Combobox(root, values=("tst1","tst2","tst3"), state="readonly")
 cmb.pack()
 
 txt = tk.Text(root)
