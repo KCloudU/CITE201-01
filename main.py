@@ -61,6 +61,10 @@ def do_clr():
     log.delete("1.0", "end")
     log_write("~ cleared")
 
+btn_add.config(command=do_add)
+btn_del.config(command=do_del)
+btn_clr.config(command=do_clr)
+
 
 root.mainloop()
 
